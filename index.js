@@ -52,7 +52,7 @@ const extractName = (t) => {
 app.get("/", (req, res) => res.send("✅ AI Interview Backend is live!"));
 
 // Parse resume
-app.post("/api/parse-resume", upload.single("file"), async (req, res) => {
+app.post("/parse-resume", upload.single("file"), async (req, res) => {
   try {
     if (!req.file) return res.status(400).json({ error: "No file uploaded" });
     const ext = path.extname(req.file.originalname).toLowerCase();
@@ -82,7 +82,7 @@ app.post("/api/parse-resume", upload.single("file"), async (req, res) => {
 });
 
 // Generate questions
-app.post("/api/generate-questions", async (req, res) => {
+app.post("/generate-questions", async (req, res) => {
   try {
     const { role = "Full Stack Developer", stack = ["React", "Node.js"] } =
       req.body;
@@ -99,7 +99,7 @@ app.post("/api/generate-questions", async (req, res) => {
 });
 
 // Grade answer
-app.post("/api/grade-answer", async (req, res) => {
+app.post("/grade-answer", async (req, res) => {
   try {
     const { question, answer } = req.body;
     if (!question || !answer)
@@ -114,7 +114,7 @@ app.post("/api/grade-answer", async (req, res) => {
 });
 
 // Final summary
-app.post("/api/final-summary", async (req, res) => {
+app.post("/final-summary", async (req, res) => {
   try {
     const { candidate } = req.body;
     if (!candidate)
