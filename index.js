@@ -10,6 +10,8 @@ import path from "path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 dotenv.config();
+console.log("🔑 GEMINI_API_KEY exists:", !!process.env.GEMINI_API_KEY);
+
 
 const app = express();
 app.use(cors());
