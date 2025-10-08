@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import multer from "multer";
-import pdfParse from "pdf-parse";
+import pdfParse from "pdf-parse-fixed";
 import mammoth from "mammoth";
 import fs from "fs";
 import path from "path";
